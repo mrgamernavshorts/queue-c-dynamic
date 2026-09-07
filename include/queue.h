@@ -49,5 +49,6 @@ void QueuePop(queue* q);
 // ----------------------------------------------------------------------------------------------------
 char* QueueGet(queue* q, int Index);
 
-// Frees the memory by destroying the Queue. [IMPORTANT]: SHOULD BE DONE EVERYTIME A QUEUE IS MADE USING QueueInit(), OR IT CAUSE A MEMEORY LEAK!
+// Frees the memory by destroying the Queue.
+// [IMPORTANT]: SHOULD BE DONE EVERYTIME A QUEUE IS MADE USING QueueInit(), OR IT CAUSE A MEMEORY LEAK!
 void QueueDestroy(queue* q);

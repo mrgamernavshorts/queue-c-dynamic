@@ -67,15 +67,6 @@ void QueuePop(queue* q){
 
   int firstIndexSize = strlen(q->location)+1;
 
-<<<<<<< HEAD
-  char tval[firstIndexSize];
-  
-  memcpy(tval, q->location, firstIndexSize);
-
-  char* val = tval;
-
-=======
->>>>>>> 5ebfade (Fixed dangling pointers, improved dev experience, improved documentation, and fixed README.md)
   for(int i = 0; i < q->used-firstIndexSize; i++){
     *(q->location+i) = *(q->location+firstIndexSize+i);
     *(q->location+firstIndexSize+i) = 0;
@@ -95,9 +86,6 @@ void QueuePop(queue* q){
         q->used -= firstIndexSize;
     }
   }
-
-
-
 }
 
 char* QueueGet(queue* q, int Index){
@@ -128,12 +116,7 @@ char* QueueGet(queue* q, int Index){
     printf("[ERROR]: Index out of range, Returning NULL. (QueueGet)\n");
     return NULL;
   }
-<<<<<<< HEAD
 
-  char val[strlen(q->location+bytesOffset)+1];
-  memcpy(val, q->location+bytesOffset, strlen(q->location+bytesOffset)+1);
-  return val;
-=======
   char* str = malloc(strlen(q->location+bytesOffset)+1);
   if(str != NULL){
     memcpy(str, q->location+bytesOffset, strlen(q->location+bytesOffset)+1);
@@ -142,5 +125,4 @@ char* QueueGet(queue* q, int Index){
     printf("[WARNING]: Could not malloc(), returning NULL pointer.(QueueGet)\n");
     return str;
   }
->>>>>>> 5ebfade (Fixed dangling pointers, improved dev experience, improved documentation, and fixed README.md)
 }
